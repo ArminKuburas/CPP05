@@ -1,37 +1,70 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/01 11:56:10 by akuburas          #+#    #+#             */
+/*   Updated: 2024/10/01 11:56:16 by akuburas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
-int main(void)
+int main()
 {
-	try
-	{
-		Bureaucrat bob("Bob", 45);
-		Bureaucrat alice("Alice", 5);
-		
-		ShrubberyCreationForm shrubForm("home");
-		RobotomyRequestForm robotForm("target1");
-		PresidentialPardonForm pardonForm("target2");
+    try
+    {
+        Intern someRandomIntern;
+        AForm* form1 = someRandomIntern.makeForm("robotomy request", "Bender");
+        AForm* form2 = someRandomIntern.makeForm("shrubbery creation", "Garden");
+        AForm* form3 = someRandomIntern.makeForm("presidential pardon", "Arthur Dent");
+        AForm* form4 = someRandomIntern.makeForm("nonexistent form", "Nobody");
 
-		bob.signForm(shrubForm);
-		bob.executeForm(shrubForm);
+        Bureaucrat alice("Alice", 45);
+        Bureaucrat bob("Bob", 5);
 
-		std::cout << "------------------" << std::endl;
+        if (form1)
+        {
+            alice.signForm(*form1);
+            alice.executeForm(*form1);
+            delete form1;
+        }
 
-		bob.signForm(robotForm);
-		bob.executeForm(robotForm);
+        std::cout << "------------------" << std::endl;
 
-		std::cout << "------------------" << std::endl;
+        if (form2)
+        {
+            alice.signForm(*form2);
+            alice.executeForm(*form2);
+            delete form2;
+        }
 
-		alice.signForm(pardonForm);
-		alice.executeForm(pardonForm);
+        std::cout << "------------------" << std::endl;
 
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+        if (form3)
+        {
+            bob.signForm(*form3);
+            bob.executeForm(*form3);
+            delete form3;
+        }
 
-	return 0;
+        std::cout << "------------------" << std::endl;
+
+        if (form4)
+        {
+            delete form4; // should be nullptr, but just to be safe
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    return 0;
 }

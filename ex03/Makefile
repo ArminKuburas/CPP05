@@ -1,9 +1,9 @@
 C++ = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = exercise02
+NAME = exercise03
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
