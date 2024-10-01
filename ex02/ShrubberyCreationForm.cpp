@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:00:41 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 11:11:04 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/01 11:32:54 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &source
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+	std::cout << "ShrubberyCreationForm " << _target << " destroyed" << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &source)

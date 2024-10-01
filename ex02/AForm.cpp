@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:54:29 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 10:57:50 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/01 11:34:35 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 AForm::AForm() : _name("default"), _grade_to_sign(150), _grade_to_execute(150), _is_signed(false)
 {
+	std::cout << "Form " << _name << " created" << std::endl;
 }
 
 AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute) : _name(name), _grade_to_sign(grade_to_sign), _grade_to_execute(grade_to_execute), _is_signed(false)
@@ -22,10 +23,12 @@ AForm::AForm(const std::string name, int grade_to_sign, int grade_to_execute) : 
 		throw AForm::GradeTooHighException();
 	if (grade_to_sign > 150 || grade_to_execute > 150)
 		throw AForm::GradeTooLowException();
+	std::cout << "Form " << _name << " created" << std::endl;
 }
 
 AForm::AForm(const AForm &source) : _name(source._name), _grade_to_sign(source._grade_to_sign), _grade_to_execute(source._grade_to_execute), _is_signed(source._is_signed)
 {
+	std::cout << "Form " << _name << " copied" << std::endl;
 }
 
 AForm::~AForm()
@@ -38,6 +41,7 @@ AForm &AForm::operator=(const AForm &source)
 	if (this == &source)
 		return (*this);
 	_is_signed = source._is_signed;
+	std::cout << "Form " << _name << " overload = copied" << std::endl;
 	return (*this);
 }
 
