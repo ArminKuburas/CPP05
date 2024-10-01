@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 03:42:43 by akuburas          #+#    #+#             */
-/*   Updated: 2024/09/17 03:49:57 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/01 10:34:59 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -44,6 +45,8 @@ class Bureaucrat
 			public:
 				virtual const char *what() const throw();
 		};
+
+		void signForm(Form &form);
 	private:
 		const std::string _name;
 		int _grade;
