@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:13:28 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 10:21:33 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/01 10:39:01 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ class Form
 		bool _is_signed;
 		
 };
+
+std::ostream &operator<<(std::ostream &out, const Form &form);
 
 #endif
