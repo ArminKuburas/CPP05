@@ -1,7 +1,7 @@
 C++ = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-NAME = exercise03
+NAME = exercise00
 
 SRCS = main.cpp Bureaucrat.cpp
 OBJS = $(SRCS:.cpp=.o)
