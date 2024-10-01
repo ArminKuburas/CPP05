@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 03:47:55 by akuburas          #+#    #+#             */
-/*   Updated: 2024/09/17 03:53:53 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/01 13:22:53 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &source) : _name(source._name), _grade(source._grade)
 {
+	std::cout << "Copied Bureaucrat" << _name << " created." << " With a grade of " << _grade << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()

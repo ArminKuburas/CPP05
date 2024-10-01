@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 03:58:41 by akuburas          #+#    #+#             */
-/*   Updated: 2024/09/17 03:59:51 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:10:08 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,27 @@
 
 int	main(void)
 {
+	{
+		Bureaucrat steve("Steve", 20);
+		std::cout << steve << std::endl;
+		steve.decrementGrade();
+		std::cout << steve << std::endl;
+		steve.incrementGrade();
+		std::cout << steve << std::endl;
+	}
+	try
+	{
+		Bureaucrat steve("Steve", 20);
+		while (true)
+		{
+			std::cout << steve << std::endl;
+			steve.incrementGrade();
+		}
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	try
 	{
 		Bureaucrat bureaucrat("John", 1);

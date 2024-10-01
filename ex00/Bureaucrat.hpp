@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 03:42:43 by akuburas          #+#    #+#             */
-/*   Updated: 2024/09/17 03:49:57 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:39:05 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Bureaucrat
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw();
+				virtual const char *what() const noexcept override;
 		};
 	private:
 		const std::string _name;
