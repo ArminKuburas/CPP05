@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:00:41 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 11:32:54 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:18:33 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 		throw AForm::FormNotSignedException();
 	if (executor.getGrade() > getGradeToExecute())
 		throw AForm::GradeTooLowException();
-	std::ofstream file(_target + "_shrubbery");
+	std::ofstream file((_target + "_shrubbery").c_str());
 	if (!file.is_open())
 		std::cerr << "File " << this->_target << "_shrubbery could not be created/opened." << std::endl;
 	else

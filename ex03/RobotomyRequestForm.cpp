@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:31:42 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 11:36:44 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:25:02 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 		throw AForm::FormNotSignedException();
 	if (executor.getGrade() > getGradeToExecute())
 		throw AForm::GradeTooLowException();
+	std::srand(static_cast<unsigned int>(std::time(0)));
 	std::cout << "*drilling noises*" << std::endl;
 	if (std::rand() % 2 == 0)
 		std::cout << _target << " has been robotomized successfully" << std::endl;
