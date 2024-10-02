@@ -1,5 +1,5 @@
 C++ = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++11 -g
 
 NAME = exercise03
 

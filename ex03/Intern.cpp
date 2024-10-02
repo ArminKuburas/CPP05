@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:51:24 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 11:55:43 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:57:49 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,17 @@ AForm* Intern::makeForm(const std::string form, const std::string target)
 	{
 		if (form == forms[i])
 		{
+			try
+			{
 			std::cout << "Intern creates " << form << std::endl;
 			return ((this->*creators[i])(target));
+			}
+			catch (std::bad_alloc &e)
+			{
+				std::cerr << e.what() << std::endl;
+				return (nullptr);
+			}
+			
 		}
 	}
 	std::cout << "Intern could not create " << form << std::endl;
