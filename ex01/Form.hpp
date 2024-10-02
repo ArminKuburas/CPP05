@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:13:28 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 10:39:01 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:01:47 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <string>
 #include <stdexcept>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {

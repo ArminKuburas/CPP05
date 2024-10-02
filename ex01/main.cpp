@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 03:58:41 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 10:39:19 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:28:04 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,18 @@ int	main(void)
 	{
 		try
 		{
-			Bureaucrat Bob("Bob", 42);
+			Bureaucrat Bob("Bob", 50);
 			Form formA("FormA", 50, 75);
 			std::cout << Bob << std::endl;
 			Bob.signForm(formA);
 			std::cout << formA << std::endl;
+			//formA.beSigned(Bob);
+			//std::cout << formA << std::endl;
+			std::cout << "reached end of try box" << std::endl;
 		}
 		catch (std::exception &e)
 		{
+			std::cout << "Within catch box" << std::endl;
 			std::cout << e.what() << std::endl;
 		}
 	}
