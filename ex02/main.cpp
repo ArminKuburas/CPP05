@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:55:57 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 11:55:58 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:00:51 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(void)
 		ShrubberyCreationForm shrubForm("home");
 		RobotomyRequestForm robotForm("target1");
 		PresidentialPardonForm pardonForm("target2");
+		AForm *form = new PresidentialPardonForm("glubgolog");
 
 		bob.signForm(shrubForm);
 		bob.executeForm(shrubForm);
@@ -38,10 +39,14 @@ int main(void)
 
 		alice.signForm(pardonForm);
 		alice.executeForm(pardonForm);
-
+		form->beSigned(alice);
+		delete form;
+		pardonForm.execute(alice);
+		std::cout << "end of try box" << std::endl;
 	}
 	catch (const std::exception &e)
 	{
+		std::cout << "inside catch box" << std::endl;
 		std::cout << e.what() << std::endl;
 	}
 

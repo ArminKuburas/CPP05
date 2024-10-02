@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:54:29 by akuburas          #+#    #+#             */
-/*   Updated: 2024/10/01 11:34:35 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:03:05 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() > _grade_to_sign)
 		throw AForm::GradeTooLowException();
 	_is_signed = true;
+std::cout << "AForm " << this->_name << " has been signed by " << bureaucrat.getName() << std::endl;
 }
 
 const char *AForm::GradeTooHighException::what() const throw()
